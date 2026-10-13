@@ -1,0 +1,128 @@
+
+# ==========================================
+# LMS - Root Git Ignore
+# Applies to Backend and Frontend
+# ==========================================
+
+# ---------- Environment variables & secrets ----------
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Backend configuration containing credentials
+Backend/src/main/resources/application.properties
+Backend/src/main/resources/application-*.properties
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# ---------- Frontend: Node.js / React / Vite ----------
+Frontend/node_modules/
+Frontend/dist/
+Frontend/build/
+Frontend/.vite/
+Frontend/coverage/
+Frontend/.npm/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- Backend: Java / Maven / Spring Boot ----------
+Backend/target/
+Backend/bin/
+Backend/build/
+Backend/out/
+Backend/.gradle/
+Backend/logs/
+Backend/*.log
+Backend/**/*.log
+
+# Maven generated files
+**/pom.xml.tag
+**/pom.xml.releaseBackup
+**/pom.xml.versionsBackup
+**/pom.xml.next
+**/release.properties
+**/dependency-reduced-pom.xml
+**/buildNumber.properties
+**/.mvn/timing.properties
+
+# ---------- Uploaded media / user-generated files ----------
+Backend/uploads/
+Backend/src/main/resources/uploads/
+uploads/
+
+# ---------- IDEs and editors ----------
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+*.swp
+*.swo
+*.class
+*.springBeans
+
+# ---------- Operating system files ----------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+Desktop.ini
+
+# ---------- Logs and runtime files ----------
+logs/
+*.log
+pids/
+*.pid
+*.pid.lock
+*.seed
+
+# ---------- Test and coverage output ----------
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# ---------- Caches ----------
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+.fusebox/
+.dynamodb/
+.tern-port
+.node_repl_history
+.npm/
+
+# ---------- Database files and local dumps ----------
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+*.sql
+*.dump
+
+# ---------- Archives and generated packages ----------
+*.tgz
+.yarn-integrity
+
+# ---------- Miscellaneous ----------
+.DS_Store
