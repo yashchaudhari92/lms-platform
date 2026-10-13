@@ -374,9 +374,9 @@ spring.datasource.password=your_password
 
 | **Service** | **URL** |
 |------------|---------|
-| **Application** | http://localhost:8080 |
-| **Swagger UI** | http://localhost:8080/swagger-ui/index.html |
-| **OpenAPI JSON Spec** | http://localhost:8080/v3/api-docs |
+| **Application** | http://localhost:8081 |
+| **Swagger UI** | http://localhost:8081/swagger-ui/index.html |
+| **OpenAPI JSON Spec** | http://localhost:8081/v3/api-docs |
 
 ## Deployment
 ### Backend (Render / Railway)
@@ -415,7 +415,7 @@ AWS_S3_BUCKET=your_bucket_name
 ## Configuration Example
 ```
 # Server
-server.port=8080
+server.port=8081
 
 # Database
 spring.jpa.hibernate.ddl-auto=update
@@ -432,7 +432,7 @@ aws.region=us-east-1
 
 
 ## Author
-- Rachit Sharma
-- GitHub: @rachitsharam300
+- Yashwant Chaudhari
+- GitHub: @yashchaudhari92
 
 
