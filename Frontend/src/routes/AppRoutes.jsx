@@ -69,22 +69,45 @@ export default function AppRoutes() {
 
   // PublicRoute - for pages that should be accessible without login
   const PublicRoute = ({ children }) => {
-    if (auth.token) {
-      // If user is logged in, redirect to appropriate dashboard
-      const userRole = auth.role?.replace("ROLE_", "");
-      switch (userRole) {
-        case "ADMIN":
-          return <Navigate to="/admin/dashboard" replace />;
-        case "INSTRUCTOR":
-          return <Navigate to="/instructor/dashboard" replace />;
-        case "STUDENT":
-          return <Navigate to="/student/dashboard" replace />;
-        default:
-          return <Navigate to="/" replace />;
-      }
+    // Allow login/signup pages when no valid role is available
+    if (!auth.token || !auth.role) {
+      return children;
     }
-    return children;
+
+    const userRole = auth.role.replace("ROLE_", "").toUpperCase();
+
+    switch (userRole) {
+      case "ADMIN":
+        return <Navigate to="/admin/dashboard" replace />;
+
+      case "INSTRUCTOR":
+        return <Navigate to="/instructor/dashboard" replace />;
+
+      case "STUDENT":
+        return <Navigate to="/student/dashboard" replace />;
+
+      default:
+        return children;
+    }
   };
+
+  // const PublicRoute = ({ children }) => {
+  //   if (auth.token) {
+  //     // If user is logged in, redirect to appropriate dashboard
+  //     const userRole = auth.role?.replace("ROLE_", "");
+  //     switch (userRole) {
+  //       case "ADMIN":
+  //         return <Navigate to="/admin/dashboard" replace />;
+  //       case "INSTRUCTOR":
+  //         return <Navigate to="/instructor/dashboard" replace />;
+  //       case "STUDENT":
+  //         return <Navigate to="/student/dashboard" replace />;
+  //       default:
+  //         return <Navigate to="/" replace />;
+  //     }
+  //   }
+  //   return children;
+  // };
 
   return (
     <Routes>
